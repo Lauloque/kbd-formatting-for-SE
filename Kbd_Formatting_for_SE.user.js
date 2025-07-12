@@ -2,7 +2,7 @@
 // @name        Kbd Formatting for SE
 // @namespace   https://github.com/Lauloque/kbd-formatting-for-SE
 // @description Adds a keyboard shortcut and button for formatting keyboard shortcuts on Stack Exchange sites.
-// @version     1.0.2
+// @version     1.0.3
 // @author      Lauloque
 // @author      gandalf3
 // @author      CoDEmanX
