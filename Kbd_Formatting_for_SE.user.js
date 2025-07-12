@@ -359,7 +359,8 @@ function main() {
                             break;
                         case "delete":
                         case "del":
-                            refined_markdown = "&#8998; Delete";
+                        case "erase":
+                            refined_markdown = "&#9003; Delete";
                             break;
                         case "enter":
                         case "return":
