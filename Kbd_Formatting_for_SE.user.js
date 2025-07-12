@@ -332,6 +332,12 @@ function main() {
                     endSpaces = 0;
                 }
 
+                // Single Letter Capitalization - check if element is a single letter
+                if (sel[char].length === 1 && /^[a-z]$/.test(sel[char])) {
+                    sel[char] = sel[char].toUpperCase();
+                    console.log("Capitalized single letter: " + sel[char]);
+                }
+
                 //test if get_prefs is defined, and if it is test if GM_value "extra markdown" is 1. If get_prefs is not defined, use the non-persistent variable:
                 if (((typeof get_prefs === "function") ? get_prefs() : pref_extra_markdown) == 1 ) {
                     //console.log("element: " + sel[char])
