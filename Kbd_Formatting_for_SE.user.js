@@ -2,7 +2,7 @@
 // @name        Kbd Formatting for SE
 // @namespace   https://github.com/Lauloque/kbd-formatting-for-SE
 // @description Adds a keyboard shortcut and button for formatting keyboard shortcuts on Stack Exchange sites.
-// @version     1.0.2
+// @version     1.0.1
 // @author      Lauloque
 // @author      CoDEmanX
 // @author      iKlsR
@@ -31,7 +31,7 @@
 
 //calls to GM functions must be outside of injected code, so put them here
 function toggle_extra_markdown() {
-    console.log("[KBD Formatting for SE] checkbox click, was", GM_getValue("extra_markdown", 1))
+    console.log("checkbox click, was", GM_getValue("extra_markdown", 1))
 
     if (GM_getValue("extra_markdown", 1) == 1) {
         GM_setValue("extra_markdown", 0);
@@ -47,7 +47,7 @@ function get_prefs() {
 //stuff which will be injected with jquery goes in main:
 function main() {
     var pref_extra_markdown = 0
-    console.log("[KBD Formatting for SE] running main!");
+    console.log("running main!");
 
     function startInjection() {
 
@@ -73,16 +73,16 @@ function main() {
     }
 
     function waitForButtonRow() {
-        console.log("[KBD Formatting for SE] waiting for button row..")
+        console.log("waiting for button row..")
 
         function testForButtonRow() { /*test for a .wmd-button-row every half a second until one is found*/
             if (counter < 60) {
                 if ($(".wmd-button-row").length > 0) { //if button row(s) exist, test each one to see if it already has a kbd button
-                    console.log("[KBD Formatting for SE] found .wmd-button-row");
-                    $(".wmd-button-row").each(function() {console.log("[KBD Formatting for SE] does it have a kbd button? ", $(this).has(".wmd-kbd-button").length);console.log("[KBD Formatting for SE] id", $(this).attr("id"))});
+                    console.log("found .wmd-button-row");
+                    $(".wmd-button-row").each(function() {console.log("does it have a kbd button? ", $(this).has(".wmd-kbd-button").length);console.log("id", $(this).attr("id"))});
                     $(".wmd-button-row").each(function() {
                         if ($(this).has(".wmd-kbd-button").length == 0) { //if no kbd button exists, inject one
-                            console.log("[KBD Formatting for SE] does not contain kbd button, inserting one");
+                            console.log("does not contain kbd button, inserting one");
                             injectButton($(this));
                         }
                     });
@@ -94,7 +94,7 @@ function main() {
                 }
             }
             else {
-                console.log("[KBD Formatting for SE] did not find a place to put kbd button within 30 seconds. giving up.");
+                console.log("did not find a place to put kbd button within 30 seconds. giving up.");
                 return;
             }
         }
@@ -107,9 +107,9 @@ function main() {
     function injectButton(buttonRow) {
         //abandonded attempt to make it work on unity answers:
 
-            //console.log("[KBD Formatting for SE] host: " + window.location.hostname);
+            //console.log("host: " + window.location.hostname);
             //if (window.location.hostname != "answers.unity3d.com") {
-                console.log("[KBD Formatting for SE] id-number:" + buttonRow.attr("id").replace(/[^0-9]+/g, ""))
+                console.log("id-number:" + buttonRow.attr("id").replace(/[^0-9]+/g, ""))
                 var kbdButtonId = 'wmd-kbd-button' + buttonRow.attr("id").replace(/[^0-9]+/g, "");
             /*}
             else {
@@ -147,13 +147,13 @@ function main() {
         //define RMB preferences menu
         $(li).on("contextmenu", function(e) {
             e.preventDefault();
-            console.log("[KBD Formatting for SE] started creating context menu. pref_extra_markdown =", pref_extra_markdown)
+            console.log("started creating context menu. pref_extra_markdown =", pref_extra_markdown)
             /*check if a preference menu already exists*/
-            console.log("[KBD Formatting for SE] contextmenu.length: " + $("#kbd-context-menu").length)
+            console.log("contextmenu.length: " + $("#kbd-context-menu").length)
 
             if ($("#kbd-context-menu").length < 1) { //ensure context menu doesn't already exist
 
-            //console.log("[KBD Formatting for SE] contextmenu")
+            //console.log("contextmenu")
             var div = $("<div>").appendTo($(li).parent());
             div.attr("id", "kbd-context-menu")
             var pOffset = $(li).parent().offset();
@@ -184,7 +184,7 @@ function main() {
             $("#entry1").html("Extra markdown <input type='checkbox' />");
             $("#entry1").attr("title", "Insert mouse and modifier key icons");
             $("#entry1 > input").css({"margin": "0"});
-            //console.log("[KBD Formatting for SE] div height: " + div.css("height"));
+            //console.log("div height: " + div.css("height"));
             div.css({"top": (e.pageY-pOffset.top) - parseInt(div.css("height")) });
 
                 //bind mouse sensors to the menu so it goes away on mouse off:
@@ -193,19 +193,19 @@ function main() {
                     vanish_delay = setTimeout(function() {$("#kbd-context-menu").fadeOut(500,function() {$(this).remove()})}, 500);
                 })
                 div.mouseenter(function() {
-                    console.log("[KBD Formatting for SE] on context menu");
+                    console.log("on context menu");
                     clearTimeout(vanish_delay);
                 })
 
                 /*store preferences*/
                 if (typeof get_prefs === "function") { //for normal chrome extensions get_prefs will be outside of scope
-                    console.log("[KBD Formatting for SE] toggle_markdown:", get_prefs());
+                    console.log("toggle_markdown:", get_prefs());
                     if (get_prefs() == 1) {
                         $("#entry1 > input").prop("checked", 1);
                     }
                 }
                 else { //if being run as chrome extension, use normal variable instead
-                    console.log("[KBD Formatting for SE] get_prefs not found, probably running as chrome extension.", "WARNING: preferences won't be saved accross page loads")
+                    console.log("get_prefs not found, probably running as chrome extension.", "WARNING: preferences won't be saved accross page loads")
                     if (pref_extra_markdown == 1) {
                         $("#entry1 > input").prop("checked", 1);
                     }
@@ -222,7 +222,7 @@ function main() {
             else {
                 $("#kbd-context-menu").remove() //right clicking on the icon when there is an existing context menu will remove it
             }
-            console.log("[KBD Formatting for SE] finished creating context menu. pref_extra_markdown =", pref_extra_markdown)
+            console.log("finished creating context menu. pref_extra_markdown =", pref_extra_markdown)
         });
     }
 
@@ -234,7 +234,7 @@ function main() {
         var end = txta.selectionEnd;
         var added = 0;
         var chars = txta.value;
-        console.log("[KBD Formatting for SE] chars: " + chars);
+        console.log("chars: " + chars);
 
         /*function to insert mousebutton icon references as needed*/
         function insertIcon(txta, mb) {
@@ -245,7 +245,7 @@ function main() {
                 }
             }
 
-            console.log("[KBD Formatting for SE] mb", mb);
+            console.log("mb", mb);
 
             switch (mb.toUpperCase()) {
                 case "MW":
@@ -276,11 +276,11 @@ function main() {
 
         if (start != end) {
             var sel = chars.slice(start, end);
-            console.log("[KBD Formatting for SE] sel BEFORE regex: " + sel);
+            console.log("sel BEFORE regex: " + sel);
 
             // Fixed regex - removed the problematic \b at the end
             sel = sel.replace(/\b(Numpad|numpad)[\s_-]*(\d+|\+|\-|\*|\/|enter|return|dot|\.|decimal)/gi, function (match, prefix, key) {
-                console.log("[KBD Formatting for SE] REGEX MATCHED:", match, "prefix:", prefix, "key:", key);
+                console.log("REGEX MATCHED:", match, "prefix:", prefix, "key:", key);
                 if (key.toLowerCase() === "dot" || key === "." || key.toLowerCase() === "decimal") {
                     return "Numpad&nbsp;•";
                 } else if (key.toLowerCase() === "enter" || key.toLowerCase() === "return") {
@@ -290,10 +290,10 @@ function main() {
                 }
             });
 
-            console.log("[KBD Formatting for SE] sel AFTER regex: " + sel);
+            console.log("sel AFTER regex: " + sel);
 
             sel = sel.match(/(?:\S+|\s)/g); //split string around whitespace without deleting whitespace, thanks to this SO post: https://stackoverflow.com/a/24504047/2730823
-            console.log("[KBD Formatting for SE] sel: " + sel);
+            console.log("sel: " + sel);
             //remove extra spaces and replace them with kbd markdown
             //var lastElement = ""; //holds previous element
             var wasSpace = 0; //tracks if last element was a space
@@ -303,7 +303,7 @@ function main() {
 
             for (var char = 0; char < sel.length; char++) {
 
-                console.log("[KBD Formatting for SE] element " + char + ": " + "'" + sel[char] + "'")
+                console.log("element " + char + ": " + "'" + sel[char] + "'")
                 //if current this element is a space, check to see if it should be replaced with a kbd
                 if (sel[char] == " ") {
                     //if previous element was not a space, replace space with kbd
@@ -314,7 +314,7 @@ function main() {
                         endSpace = char;
                    }
                    else {
-                       //console.log("[KBD Formatting for SE] asdf42")
+                       //console.log("asdf42")
                        //console.log(sel.join(""))
                        sel.splice(char, 1); //remove extra space
                        //console.log(sel.join(""))
@@ -334,7 +334,7 @@ function main() {
 
                 //test if get_prefs is defined, and if it is test if GM_value "extra markdown" is 1. If get_prefs is not defined, use the non-persistent variable:
                 if (((typeof get_prefs === "function") ? get_prefs() : pref_extra_markdown) == 1 ) {
-                    //console.log("[KBD Formatting for SE] element: " + sel[char])
+                    //console.log("element: " + sel[char])
                     switch(sel[char].toLowerCase()) {
                         case "control":
                         case "ctrl":
@@ -445,8 +445,8 @@ function main() {
                             }
                             break;
                     }
-                console.log("[KBD Formatting for SE] refined_markdown: " + refined_markdown)
-                console.log("[KBD Formatting for SE] refined_markdown.length: " + refined_markdown.length)
+                console.log("refined_markdown: " + refined_markdown)
+                console.log("refined_markdown.length: " + refined_markdown.length)
                 if (refined_markdown.length > 0) {
                     //added += refined_markdown.length;
                     sel.splice(char, 1, refined_markdown);

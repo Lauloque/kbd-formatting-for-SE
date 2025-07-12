@@ -1,56 +1,56 @@
-![Header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=Loïc%20DAUTRY%20(Lauloque)&textBg=false&reversal=false&desc=3D%20Character%20Animator%20,%20and%other%20things&descAlignY=65)
+# kbd-formatting-for-SE
 
-<div align="center">
-  
-  [![GitLab](https://img.shields.io/badge/GitLab-DF3629?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/Lauloque) 
-  [![Blender](https://img.shields.io/badge/Blender-3F95FD?style=for-the-badge&logo=blender&logoColor=white)](https://projects.blender.org/Lauloque?tab=activity)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-3261C1?style=for-the-badge&logo=linkedin&logoColor=white&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/loicdautry)
-  [![ArtStation](https://img.shields.io/badge/ArtStation-45BAFE?style=for-the-badge&logo=ArtStation&logoColor=white)](https://www.artstation.com/dautryloic) 
-  [![Ko-Fi](https://img.shields.io/badge/Support-D84A4F?style=for-the-badge&logo=kofi&logoColor=white)](https://ko-fi.com/lauloque) 
-  
-</div>
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&labelColor=555555)](LICENSE)
+[![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/lauloque)
 
-## 🫠 Who Am I?
+Adds a keyboard shortcut for formatting keyboard shortcuts on Stack Exchange sites.
 
-Character animator with a soft spot for coding and hyperfocusing on random things. I make Blender addons and scripts to smooth out workflows and share them with others, I even [contributed](https://projects.blender.org/Lauloque?tab=activity) (just a little bit). Happy if they helps, and grateful to anyone who finds value in what I share 🧡
+This Tampermonkey userscript allows you to select text and, <kbd>&#9096; Ctrl</kbd><kbd>Y</kbd>, automatically format common keyboard keys and mouse buttons using HTML `<kbd>` tags. This provides a visually distinct and semantic way to represent user input instructions in your writing.
 
+## Features
 
+- **Effortless Formatting:** Select text containing keyboard key names and press a keyboard shortcut of your choosing  to format them. For example`ctrl shift a` will become <kbd>⎈ Ctrl</kbd> <kbd>⇧ Shift</kbd> <kbd>A</kbd>.
+- **Special Keys Recognition:**
+  - Common modifier keys: <kbd>&#9096; Ctrl</kbd> <kbd>&#8679; Shift</kbd> <kbd>&#9095; Alt</kbd> <kbd>&#8984; Cmd</kbd> <kbd>Win</kbd> etc.
+  - Function keys: <kbd>F1</kbd>-<kbd>F12</kbd>
+  - Command keys <kbd>⇥ Tab</kbd>, <kbd>⌦ Delete</kbd> <kbd>⏎ Enter</kbd>
+  - Arrow keys "up" and "left" become <kbd>↑ Up</kbd> <kbd>← Left</kbd>
+  - Numpad keys such as dot or numbers will be formatted as <kbd>Numpad&nbsp;•</kbd> or <kbd>Numpad&nbsp;5</kbd>
+- **Mouse Button Formatting:** "lmb" as <kbd>Left 🖱️</kbd>, "rmb" as <kbd>Right 🖱️</kbd>, "mmb" as <kbd>Middle 🖱️</kbd>, and "wheel" or "scrollwheel" as <kbd>Wheel 🖱️</kbd>.
+- **Case-Insensitive Matching:** Key names are recognized regardless of their capitalization (e.g., "Ctrl", "ctrl", and "CTRL" all become <kbd>⎈ Ctrl</kbd>).
+- **Single Letter Capitalization:** Capitalizes single-letter words (useful for individual key presses), like "a" becoming <kbd>A</kbd>.
 
+## How to Use
 
-## 📈 GitHub Activity
-  
-<div align="center">
-  
-  [![GitHub Streak](https://streak-stats.demolab.com?user=Lauloque&theme=catppuccin-frappe&hide_border=true&date_format=j%20M%5B%20Y%5D)](https://git.io/streak-stats)
+1. **Install the script:**
+   
+   - You need a userscript extension installed on your web browser:
+     - Firefox:   [Greasemonkey – Get this Extension for 🦊 Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
+     - Chrome: [Tampermonkey - Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+   - Open the raw [Kbd_Formatting_for_SE.user.js](https://github.com/Lauloque/kbd-formatting-for-SE/raw/refs/heads/main/Kbd_Formatting_for_SE.user.js), your userscript extension should detect it and propose you to install it.  
+       If not, copy the whole code and refer to your extension's tools to add a script manually.
 
-  [![Lauloque's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Lauloque&theme=material-palenight)](https://github.com/ashutosh00710/github-readme-activity-graph)
-</div>
+2. **Format text:**
+   
+   - Select the text you want to format (e.g., `ctrl shift a`).
+   - Press the keyboard shortcut <kbd>&#9096; Ctrl</kbd><kbd>Y</kbd>
+   - The selected text will be transformed into: `<kbd>⎈ Ctrl</kbd> <kbd>⇧ Shift</kbd> <kbd>A</kbd>` which looks like this:  
+     <kbd>⎈ Ctrl</kbd> <kbd>⇧ Shift</kbd> <kbd>A</kbd>.
 
-## Notable works:
+---
 
-### Table of contents
+## License
 
-   * [Blender Addons](#blender-addons)
-   * [Browser Userscripts](#browser-userscripts)
-   * [FFmpeg](#ffmpeg)
-   * [Others](#others)
+Original concept and implementation by CoDEmanX and iKlsR
+This enhanced version is made and maintained by Lauloque
+See https://blender.meta.stackexchange.com/q/388/599 for discussion
 
-### Blender Addons
+Thank you for using Obsidian Keyboard Formatter! If you have any issues or suggestions, please feel free to open an issue on this repository.
 
-[![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=AudioNotifier&theme=catppuccin_mocha)](https://github.com/Lauloque/AudioNotifier) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=Autokey-Highlight&theme=catppuccin_mocha)](https://github.com/Lauloque/Autokey-Highlight) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=bl_reset_custom_properties&theme=catppuccin_mocha)](https://github.com/Lauloque/bl_reset_custom_properties) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=convertRotationMode&theme=catppuccin_mocha)](https://github.com/Lauloque/convertRotationMode) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=GizmoTools&theme=catppuccin_mocha)](https://github.com/Lauloque/GizmoTools) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=History_Panel&theme=catppuccin_mocha)](https://github.com/Lauloque/History_Panel) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=import_synkscetch_notes&theme=catppuccin_mocha)](https://github.com/Lauloque/import_synkscetch_notes) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=LauloqueMayaScriptsDump&theme=catppuccin_mocha)](https://github.com/Lauloque/LauloqueMayaScriptsDump) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=LoopMethods&theme=catppuccin_mocha)](https://github.com/Lauloque/LoopMethods) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=RigAnimTools&theme=catppuccin_mocha)](https://github.com/Lauloque/RigAnimTools) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=setViewportDisplay&theme=catppuccin_mocha)](https://github.com/Lauloque/setViewportDisplay)
+---
 
-### Browser Userscripts
+## Support My Work
 
-[![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=BCom-Toolbox&theme=catppuccin_mocha)](https://github.com/Lauloque/BCom-Toolbox) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=Blender.Community.Textformatter&theme=catppuccin_mocha)](https://github.com/Lauloque/Blender.Community.Textformatter) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=BSE-Toolbox&theme=catppuccin_mocha)](https://github.com/Lauloque/BSE-Toolbox) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=kbd-formatting-for-SE&theme=catppuccin_mocha)](https://github.com/Lauloque/kbd-formatting-for-SE) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=OCTweaksScript&theme=catppuccin_mocha)](https://github.com/Lauloque/OCTweaksScript)
+[![Support me on Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/lauloque)
 
-### FFmpeg
-
-[![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=FFmpeg-bat-collection&theme=catppuccin_mocha)](https://github.com/Lauloque/FFmpeg-bat-collection) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=FFmpeg-py-collection&theme=catppuccin_mocha)](https://github.com/Lauloque/FFmpeg-py-collection)
-
-### Others
-
-[![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=ImageSequenceTranscoder&theme=catppuccin_mocha)](https://github.com/Lauloque/ImageSequenceTranscoder) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=Keyboard-Formatter&theme=catppuccin_mocha)](https://github.com/Lauloque/Keyboard-Formatter) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=ScreenPen&theme=catppuccin_mocha)](https://github.com/Lauloque/ScreenPen) [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=Lauloque&repo=Set-folder-icon-RC&theme=catppuccin_mocha)](https://github.com/Lauloque/Set-folder-icon-RC)
-
-<!---
-![Footer](https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&textBg=false&reversal=false&desc=Thanks%20for%20checking&descAlignY=65&section=footer)
---->
+If you find this plugin helpful and would like to support its development, you can buy me a coffee on Ko-fi! Your support is greatly appreciated.
