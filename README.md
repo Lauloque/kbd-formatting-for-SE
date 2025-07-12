@@ -16,7 +16,7 @@ This Tampermonkey userscript allows you to select text and, <kbd>&#9096; Ctrl</k
   - Command keys <kbd>⇥ Tab</kbd>, <kbd>⌦ Delete</kbd> <kbd>⏎ Enter</kbd>
   - Directions like `up` and `left` become <kbd>↑ Up</kbd> <kbd>← Left</kbd> to mimic arrow keys
   - Numpad keys such as `numpad .` or `numpad 5`  will be formatted as <kbd>Numpad&nbsp;•</kbd> or <kbd>Numpad&nbsp;5</kbd>
-- **Mouse Button Formatting:** "lmb" as <kbd>Left 🖱️</kbd>, "rmb" as <kbd>Right 🖱️</kbd>, "mmb" as <kbd>Middle 🖱️</kbd>, and "wheel" or "scrollwheel" as <kbd>Wheel 🖱️</kbd>.
+- **Mouse Button Formatting:** `lmb`, `rmb`, `mmb`, and `wheel` or `scrollwheel` as  ![LMB](https://i.stack.imgur.com/FwrAW.png "Left Mouse Button") LMB,  ![RMB](https://i.stack.imgur.com/LPwD4.png "Right Mouse Button") RMB,  ![MMB](https://i.stack.imgur.com/OASpJ.png "Middle Mouse Button") MMB, and  ![MW](https://i.stack.imgur.com/v1vyT.png "Mouse Wheel") MW
 - **Case-Insensitive Matching:** Key names are recognized regardless of their capitalization (e.g., "Ctrl", "ctrl", and "CTRL" all become <kbd>⎈ Ctrl</kbd>).
 - **Single Letter Capitalization:** Capitalizes single-letter words (useful for individual key presses), like "a" becoming <kbd>A</kbd>.
 
