@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name        Kbd Formatting for SE
-// @namespace   https://github.com/your-username/
+// @namespace   https://github.com/Lauloque/kbd-formatting-for-SE
 // @description Adds a keyboard shortcut and button for formatting keyboard shortcuts on Stack Exchange sites.
-// @version     1.0.0
+// @version     1.0.1
 // @author      Lauloque
 // @author      CoDEmanX
 // @author      iKlsR
@@ -19,8 +19,8 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @run-at      document-end
-// @updateURL   https://example.com/path/to/your/script.user.js
-// @downloadURL https://example.com/path/to/your/script.user.js
+// @updateURL   https://github.com/Lauloque/kbd-formatting-for-SE/raw/refs/heads/main/Kbd_Formatting_for_SE.user.js
+// @downloadURL https://github.com/Lauloque/kbd-formatting-for-SE/raw/refs/heads/main/Kbd_Formatting_for_SE.user.js
 // @supportURL  https://blender.meta.stackexchange.com/q/388/599
 // @license     MIT
 // ==/UserScript==
