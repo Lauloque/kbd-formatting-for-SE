@@ -13,7 +13,7 @@ This Tampermonkey userscript allows you to select text and, <kbd>&#9096; Ctrl</k
 - **Special Keys Recognition:**
   - Common modifier keys: <kbd>&#9096; Ctrl</kbd> <kbd>&#8679; Shift</kbd> <kbd>&#9095; Alt</kbd> <kbd>&#8984; Cmd</kbd> <kbd>Win</kbd> etc.
   - Function keys: <kbd>F1</kbd>-<kbd>F12</kbd>
-  - Command keys <kbd>⇥ Tab</kbd>, <kbd>⌦ Delete</kbd> <kbd>⏎ Enter</kbd>
+  - Command keys <kbd>⇥ Tab</kbd>, <kbd>⌫ Delete</kbd> <kbd>⏎ Enter</kbd>
   - Directions like `up` and `left` become <kbd>↑ Up</kbd> <kbd>← Left</kbd> to mimic arrow keys
   - Numpad keys such as `numpad .` or `numpad 5`  will be formatted as <kbd>Numpad&nbsp;•</kbd> or <kbd>Numpad&nbsp;5</kbd>
 - **Mouse Button Formatting:** `lmb`, `rmb`, `mmb`, and `wheel` or `scrollwheel` as  ![LMB](https://i.stack.imgur.com/FwrAW.png "Left Mouse Button") LMB,  ![RMB](https://i.stack.imgur.com/LPwD4.png "Right Mouse Button") RMB,  ![MMB](https://i.stack.imgur.com/OASpJ.png "Middle Mouse Button") MMB, and  ![MW](https://i.stack.imgur.com/v1vyT.png "Mouse Wheel") MW
