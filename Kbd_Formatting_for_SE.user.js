@@ -23,7 +23,7 @@
 // @updateURL   https://github.com/Lauloque/kbd-formatting-for-SE/raw/refs/heads/main/Kbd_Formatting_for_SE.user.js
 // @downloadURL https://github.com/Lauloque/kbd-formatting-for-SE/raw/refs/heads/main/Kbd_Formatting_for_SE.user.js
 // @supportURL  https://blender.meta.stackexchange.com/q/388/599
-// @license     MIT
+// @license     GPL-3.0-or-later 
 // ==/UserScript==
 
 // Original concept and implementation by gandalf3, CoDEmanX and iKlsR
