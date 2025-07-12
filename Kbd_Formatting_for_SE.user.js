@@ -4,6 +4,7 @@
 // @description Adds a keyboard shortcut and button for formatting keyboard shortcuts on Stack Exchange sites.
 // @version     1.0.2
 // @author      Lauloque
+// @author      gandalf3
 // @author      CoDEmanX
 // @author      iKlsR
 // @match       https://*.stackexchange.com/*
@@ -25,8 +26,8 @@
 // @license     MIT
 // ==/UserScript==
 
-// Original concept and implementation by CoDEmanX and iKlsR
-// Enhanced and maintained by Lauloque
+// Original concept and implementation by gandalf3, CoDEmanX and iKlsR
+// This implementation is maintained by Lauloque
 // See https://blender.meta.stackexchange.com/q/388/599 for discussion
 
 //calls to GM functions must be outside of injected code, so put them here
